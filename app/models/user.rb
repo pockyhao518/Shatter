@@ -34,11 +34,4 @@ class User < ApplicationRecord
         self.session_token ||= SecureRandom.urlsafe_base64
     end
 
-    def generate_unique_session_token
-        self.session_token = SecureRandom.urlsafe_base64
-        while User.find_by(session_token: self.session_token)
-            self.session_token = SecureRandom.urlsafe_base64
-        end
-        self.session_token
-    end
 end
