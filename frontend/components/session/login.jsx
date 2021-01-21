@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
@@ -23,22 +24,46 @@ class Login extends React.Component {
     }
 
     render() {
+        const logStatus = this.props.currentUser ? (
+            <div>
+                <button className="header-button" onClick={this.props.logout}>Log Out</button>        </div>) :
+            (<div>
+                <Link className="login" to="/login">Log in</Link>
+                <Link className="signup" to="/signup">Sign up</Link>
+            </div>
+            );
         return (
             <div className="session-form">
-                <h2>Log In!</h2>
-                <form>
-                    <label>Username:
-                        <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')} /></label>
-
-                    <label>Password:
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')} />
-
-                    <button onClick={this.handleSubmit}>Log In!</button></label>
-                </form>
+                <div className="login-signup">
+                    <div>
+                        <img src={window.icon} alt="icon" />
+                        <h1>Shatter</h1>
+                    </div>
+                    <div>
+                        {logStatus}
+                    </div>
+                </div>
+                <div className='log-form-page'>
+                    <img src={window.icon} alt="icon" />
+                    
+                    <form>
+                        <h2>WELCOME TO SHATTER</h2>
+                        <label>Username:
+                            <br/>
+                            <input type="text"
+                                value={this.state.username}
+                                onChange={this.update('username')} /></label>
+                        <br/>
+                        <label>Password:
+                            <br />
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')} />
+                        <br/>
+                        </label>
+                        <button onClick={this.handleSubmit}>Log In!</button>
+                    </form>
+                </div>
             </div>
         )
     }

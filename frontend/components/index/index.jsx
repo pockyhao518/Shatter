@@ -22,6 +22,7 @@ class Index extends React.Component {
             <div className="index">
                 <div className="login-signup">
                     <div>
+                        <img src={window.icon} alt="icon" />
                         <h1>Shatter</h1>
                     </div>
                     <div>
