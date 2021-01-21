@@ -38,7 +38,9 @@ class Signup extends React.Component {
                 <div className="login-signup">
                     <div>
                         <img src={window.icon} alt="icon" />
+                        <Link to='/'>
                         <h1>Shatter</h1>
+                        </Link>
                     </div>
                     <div>
                         {logStatus}
