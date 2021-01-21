@@ -4,10 +4,9 @@ export default (oldState = {id: null}, action) => {
     Object.freeze(oldState);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            debugger
-            return action.currentUser;
+            return {id: action.currentUser.id};
         case LOGOUT_CURRENT_USER:
-            return oldState;
+            return {id:null};
         default:
             return oldState;
     }

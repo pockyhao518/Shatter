@@ -3,8 +3,21 @@ import Main from './main';
 import Footer from './foot';
 import { Link } from 'react-router-dom';
 
-class Home extends React.Component {
+class Index extends React.Component {
+    constructor(props){
+        super(props)
+    }
+    
     render(){
+        const logStatus = this.props.currentUser ? (
+        <div>
+                <button className="header-button" onClick={this.props.logout}>Log Out</button>        </div>): 
+        (<div>
+            <Link className="login" to="/login">Log in</Link>
+            <Link className="signup" to="/signup">Sign up</Link>
+        </div>
+        );
+
         return(
             <div className="index">
                 <div className="login-signup">
@@ -12,8 +25,7 @@ class Home extends React.Component {
                         <h1>Shatter!</h1>
                     </div>
                     <div>
-                        <Link className="login" to="/login">Log in</Link>
-                        <Link className="signup" to="/signup">Sign up</Link>
+                        {logStatus}
                     </div>
                 </div>
             <Main/>
@@ -24,4 +36,4 @@ class Home extends React.Component {
     
 }
 
-export default Home;
+export default Index;
