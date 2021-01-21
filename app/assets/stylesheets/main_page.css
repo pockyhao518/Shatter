@@ -1,0 +1,35 @@
+.main-page{
+    background-image: url(http://www.allwhitebackground.com/images/5/Light-Background-Image-HD.jpg);
+    background-size: 700px;
+    display: block;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.main-page img{
+    margin-top: 100px;
+    height: 400px;
+}
+
+.descrition1{
+    font-family: 'Montserrat';
+    display: inline-block;
+    position: absolute;
+    width: 400px;
+    top: 200px;
+    left: 100px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.descrition2{
+    font-family: 'Montserrat';
+    display: inline-block;
+    position: absolute;
+    top: 450px;
+    left: 100px;
+    font-size: 20px;
+    width: 400px;
+}

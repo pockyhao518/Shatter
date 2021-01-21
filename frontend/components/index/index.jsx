@@ -22,7 +22,7 @@ class Index extends React.Component {
             <div className="index">
                 <div className="login-signup">
                     <div>
-                        <h1>Shatter!</h1>
+                        <h1>Shatter</h1>
                     </div>
                     <div>
                         {logStatus}

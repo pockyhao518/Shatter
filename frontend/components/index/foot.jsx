@@ -5,6 +5,7 @@ export default class Footer extends React.Component {
     render() {
         return (
             <div className="footer">
+                <h1>Core features</h1>
                 <ul className="ul-feature">
                     <li className="li-feature">Add/delete friends</li>
                     <li className="li-feature">Add/delete notes</li>
