@@ -10,6 +10,7 @@ class Login extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this)
     }
 
     update(field) {
@@ -22,6 +23,14 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.login(this.state);
     }
+
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        this.props.login({
+            username: 'DemoUser',
+            password: 'password',});
+    }
+    
 
     render() {
         const logStatus = this.props.currentUser ? (
@@ -64,6 +73,7 @@ class Login extends React.Component {
                         <br/>
                         </label>
                         <button onClick={this.handleSubmit}>Log In!</button>
+                        <button className='demo' onClick={this.handleDemoSubmit}>Demo</button>
                     </form>
                 </div>
             </div>

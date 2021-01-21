@@ -51,3 +51,13 @@ a.signup {
     box-shadow: 0px 2px #757474;
     margin-left: 20px;
 }
+
+.demo{
+    font-family: Montserrat;
+    color: white;
+    background-color: #1ddab1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px #757474;
+    margin-left: 20px;
+}
