@@ -94,12 +94,9 @@ a.signup {
     margin-top: 10px;
 }
 
-.dropdown:hover>.account-drop-down {
+.dropdown .header-button{
     position: relative;
     display: flex;
-}
-
-.account-drop-down >.header-button{
     font-family: 'Roboto';
     background-color: white;
     color: black;

@@ -37,7 +37,7 @@ class Signup extends React.Component {
         return (
             <div className="session-form">
                 
-                <LoginError errors={this.props.errors} />
+                
                 <div className='log-form-page'>
                     <Link to='/'>
                         <img src={window.icon} alt="icon" />
@@ -45,6 +45,7 @@ class Signup extends React.Component {
                 
                 <form>
                         <p>INTRODUCE YOURSELF</p>
+                        <LoginError errors={this.props.errors} />
                         <br/>
                     <label>Hi there! My name is:
                         <br />
@@ -58,7 +59,7 @@ class Signup extends React.Component {
                     <label>Email:
                         <br />
                         <input
-                            type="text"
+                            type="email"
                             value={this.state.email}
                             onChange={this.update('email')} /></label>
                     <br />

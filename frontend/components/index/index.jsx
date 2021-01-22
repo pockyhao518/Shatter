@@ -6,17 +6,21 @@ import { Link } from 'react-router-dom';
 class Index extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            show: false
+        }
+        this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
+    }
+    whenFocusOrBlur(e) {
+        const newState = !this.state.show
+        this.setState({ show: newState })
     }
     
     render(){
         const logStatus = this.props.currentUser ? (
         <div>
             <div className="dropdown">
-                <p>{this.props.currentUser.username}</p>
-            
-                <div className="account-drop-down">
-                    <button className="header-button" onClick={this.props.logout}>Log Out</button> 
-                </div>
+                    <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>{this.props.currentUser.username}▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a>: null}</button>
             </div>    
         </div>): 
         (<div>
