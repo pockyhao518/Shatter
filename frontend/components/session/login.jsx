@@ -69,12 +69,14 @@ class Login extends React.Component {
                                 value={this.state.username}
                                 onChange={this.update('username')} /></label>
                         <br/>
+                        <br />
                         <label>Password:
                             <br />
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')} />
                         <br/>
+                            <br />
                         </label>
                         <button onClick={this.handleSubmit}>Log In!</button>
                         <button className='demo' onClick={this.handleDemoSubmit}>Demo</button>

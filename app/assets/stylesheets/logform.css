@@ -1,6 +1,41 @@
 
 .session-form .login-signup img {
+    height: 30px;
+}
+
+.session-form .login-signup{
+    width: auto;
+    background-color: #11bb96;
+    padding: 0px 40px;
     height: 40px;
+    align-items: center;
+}
+
+.session-form .login-signup a.signup {
+    font-family: 'Roboto';
+    color: white;
+    background-color: #f86b0ee7;
+    padding: 6px 9px;
+    border-radius: 5px;
+    box-shadow: 0px 2px #757474;
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+
+.session-form .login-signup a.login {
+    font-family: 'Roboto';
+    color: white;
+    background-color: #16d4ab;
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: 0px 2px #757474;
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+.session-form .login-signup h1{
+    margin-top: 2px;
 }
 
 .log-form-page {

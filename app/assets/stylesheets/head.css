@@ -45,7 +45,7 @@ a.signup {
     margin-left: 20px;
 }
 
-a.signup:hover{
+.index a.signup:hover{
     margin-top: 2px;
     box-shadow: 0px 0px;
 }
