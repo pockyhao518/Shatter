@@ -3,29 +3,31 @@
     margin-right: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 30px 100px;
-    background-color: #eaeaea;
+    align-items: flex-start;
+    padding: 20px 32px;
+    background-color: #f0f8f9;
 }
 
 .login-signup div {
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .login-signup img {
-    height: 20px;
+    height: 40px;
 }
 
 .login-signup h1 {
     display: block;
-    font-family: 'Montserrat';
+    font-family: 'Roboto';
     font-weight: bold;
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 a.login {
-    font-family: 'Montserrat';
+    font-family: 'Roboto';
     color: #1ddab1;
     align-content: center;
     padding-top: 10px;
@@ -33,31 +35,44 @@ a.login {
 }
 
 a.signup {
-    font-family: Montserrat;
+    font-family: 'Roboto';
     color: white;
     background-color: #1ddab1;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
     box-shadow: 0px 2px #757474;
     margin-left: 20px;
 }
 
+a.signup:hover{
+    margin-top: 2px;
+    box-shadow: 0px 0px;
+}
+
 .header-button{
-    font-family: Montserrat;
+    font-family: 'Roboto';
     color: white;
     background-color: #1ddab1;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
     box-shadow: 0px 2px #757474;
     margin-left: 20px;
 }
 
 .demo{
-    font-family: Montserrat;
+    font-family: 'Roboto';
     color: white;
     background-color: #1ddab1;
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 0px 2px #757474;
     margin-left: 20px;
+}
+
+.login-error-list {
+    margin: auto;
+    background: #d32c2c;
+    color: white;
+    padding: 10px 30px;
+    width: fit-content;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoginError from './login_error';
 
 class Login extends React.Component {
     constructor(props) {
@@ -12,7 +13,9 @@ class Login extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this)
     }
-
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
     update(field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value });
@@ -54,6 +57,7 @@ class Login extends React.Component {
                         {logStatus}
                     </div>
                 </div>
+                <LoginError errors={this.props.errors} />
                 <div className='log-form-page'>
                     <img src={window.icon} alt="icon" />
                     

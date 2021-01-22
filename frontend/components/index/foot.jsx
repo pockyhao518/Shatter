@@ -7,12 +7,12 @@ export default class Footer extends React.Component {
             <div className="footer">
                 <h1>Core features</h1>
                 <ul className="ul-feature">
-                    <li className="li-feature">Add/delete friends</li>
-                    <li className="li-feature">Add/delete notes</li>
-                    <li className="li-feature">Add/delete bill</li>
-                    <li className="li-feature">View all bills</li>
-                    <li className="li-feature">Split bill</li>
-                    <li className="li-feature">Calculator</li>
+                    <li className="li-feature"><img src={window.small_icon} alt="sicon" />Add/delete friends</li>
+                    <li className="li-feature"><img src={window.small_icon} alt="sicon" />Add/delete notes</li>
+                    <li className="li-feature"><img src={window.small_icon} alt="sicon" />Add/delete bill</li>
+                    <li className="li-feature"><img src={window.small_icon} alt="sicon" />View all bills</li>
+                    <li className="li-feature"><img src={window.small_icon} alt="sicon" />Split bill</li>
+                    <li className="li-feature"><img src={window.small_icon} alt="sicon" />Calculator</li>
                 </ul>
                 <div className="footer-nav">
                     <div className="left-footer">

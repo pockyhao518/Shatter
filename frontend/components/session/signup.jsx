@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoginError from './login_error';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -46,6 +47,7 @@ class Signup extends React.Component {
                         {logStatus}
                     </div>
                 </div>
+                <LoginError errors={this.props.errors} />
                 <div className='log-form-page'>
                 <img src={window.icon} alt="icon" />
                 <form>
