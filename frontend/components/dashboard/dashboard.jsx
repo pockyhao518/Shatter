@@ -10,7 +10,13 @@ export default class Dashboard extends React.Component {
                         <h1>Shatter!</h1>
                     </div>
                     <div>
-                        <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                        <div className="dropdown">
+                            <p>{this.props.currentUser.username}</p>
+
+                            <div className="account-drop-down">
+                                <button className="header-button" onClick={this.props.logout}>Log Out</button>
+                            </div>
+                        </div> 
                     </div>
                 </div>
                 <div className="dashboard">

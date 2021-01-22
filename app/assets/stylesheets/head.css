@@ -6,6 +6,7 @@
     align-items: flex-start;
     padding: 20px 32px;
     width: 80%;
+    height:40px;
     background-color: #f0f8f9;
 }
 
@@ -76,4 +77,34 @@ a.signup {
     color: white;
     padding: 10px 30px;
     width: fit-content;
+}
+
+.dropdown .account-drop-down{
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 5px;
+    z-index: 1;
+}
+
+.login-signup .dropdown{
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.dropdown:hover>.account-drop-down {
+    position: relative;
+    display: flex;
+}
+
+.account-drop-down >.header-button{
+    font-family: 'Roboto';
+    background-color: white;
+    color: black;
+    padding: 0px 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px #757474;
+    margin-left: 0px;
 }

@@ -11,7 +11,14 @@ class Index extends React.Component {
     render(){
         const logStatus = this.props.currentUser ? (
         <div>
-                <button className="header-button" onClick={this.props.logout}>Log Out</button>        </div>): 
+            <div className="dropdown">
+                <p>{this.props.currentUser.username}</p>
+            
+                <div className="account-drop-down">
+                    <button className="header-button" onClick={this.props.logout}>Log Out</button> 
+                </div>
+            </div>    
+        </div>): 
         (<div>
             <Link className="login" to="/login">Log in</Link>
             <Link className="signup" to="/signup">Sign up</Link>

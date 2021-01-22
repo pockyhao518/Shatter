@@ -13,11 +13,13 @@ img, section, nav, article, textarea {
     vertical-align: inherit;
     box-sizing: inherit;
     background: transparent;
+    font-family: 'Roboto';
 } 
 
 ul, ol {
     list-style: none;
     padding: 0;
+    font-family: 'Roboto';
 }
 
 input[type="password"],

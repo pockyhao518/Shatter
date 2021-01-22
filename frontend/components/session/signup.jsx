@@ -44,7 +44,9 @@ class Signup extends React.Component {
                     </Link>
                 
                 <form>
-                    <label>Username:
+                        <p>INTRODUCE YOURSELF</p>
+                        <br/>
+                    <label>Hi there! My name is:
                         <br />
                         <input
                             type="text"

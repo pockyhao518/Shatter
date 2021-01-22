@@ -57,7 +57,9 @@
     }
 }
 
-
+.log-form-page P{
+    color:gray;
+}
 
 .session-form form{
     margin-top: 70px;
