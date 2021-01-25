@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CenterDashboard from './centerDashboard/center_dashboard';
-import CreateBillFormContainer from './bill/create_bill_container'
+import BillIndexItem from './bill_index_item'
 
 export default class Dashboard extends React.Component {
     constructor(props) {
@@ -10,6 +10,7 @@ export default class Dashboard extends React.Component {
             show: false
         }
         this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
+        this.handleDelete = this.handleDelete.bind(this)
     }
     whenFocusOrBlur(e) {
         const newState = !this.state.show
@@ -17,6 +18,12 @@ export default class Dashboard extends React.Component {
     }
     componentDidMount() {
         this.props.fetchAllBills(currentUser.id);
+    }
+
+    handleDelete(id) {
+        return e => {
+            this.props.deleteBill(id);
+        }
     }
     render() {
         const logStatus = this.props.currentUser ? (
@@ -55,10 +62,12 @@ export default class Dashboard extends React.Component {
                         
                         <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} header={'Dashboard'}/>
                         <ul>
-                                {this.props.bills.map(bill =>
-                                    <li key={bill.id}>{bill.description} {bill.amount}</li>)}
-                            </ul>
-                            <CreateBillFormContainer />
+                            <li><div>Description</div><div>Amount</div><button type='hidden'></button></li>
+                            
+                            {this.props.bills.map(bill =>
+                                <BillIndexItem key={bill.id} bill={bill} deleteBill={this.props.deleteBill} />)}
+                        </ul>
+                           
                     </div>
                     <div className='right-side-bar'>
                         Setting

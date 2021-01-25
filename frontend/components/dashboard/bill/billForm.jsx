@@ -14,32 +14,46 @@ class BillFrom extends React.Component {
         }
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         this.props.action(this.state)
+        this.props.closeModal();
     }
 
     render() {
         return (
+            <div>
+            <h1>NEW BILL</h1>
             <form onSubmit={this.handleSubmit}>
-                <h1>{this.props.formType}</h1>
-                <label>amount
-                    <input type='number'
-                        value={this.state.amount}
-                        onChange={this.update('amount')}
-                    />
-                </label>
-                <br/>
-                <br/>
-                <label>description
+                    <label>Description
                     <textarea value={this.state.description}
-                        onChange={this.update('description')}
-                    />
+                            onChange={this.update('description')}
+                        />
+                    </label>
+                <br/>
+                <br/>
+                    <label>Amount
+                    <input type='number' step="0.01"
+                            value={this.state.amount}
+                            onChange={this.update('amount')}
+                        />
+                    </label>
+                <br/>
+                <br/>
+
+                <label>date
+                    <br/>
+                    <input type="date"
+                            onChange={this.update('date')}
+                        />
                 </label>
                 <br/>
                 <br/>
-                <input type='submit' value='ADD BILL' />
-
+                <div className='bill-form-sub'>
+                <button >Create</button>
+                </div>
             </form>
+            </div>
         )
     }
 }

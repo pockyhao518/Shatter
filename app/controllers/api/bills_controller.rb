@@ -33,7 +33,7 @@ class Api::BillsController < ApplicationController
         @bill = Bill.find(params[:id])
         if @bill.author_id == current_user.id
             @bill.destroy
-            render 'api/users/show'
+            render 'api/bills/show'
         else
             render json: ['This is not your bill'], status: 404
         end

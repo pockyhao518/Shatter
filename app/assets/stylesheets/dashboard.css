@@ -18,3 +18,15 @@
     margin-top: 10px;
     width: 200px;
 }
+
+.center-col li{
+    justify-content: space-between;
+    border-bottom: solid 1px #eee;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.center-col li div{
+    width: 80px;
+}

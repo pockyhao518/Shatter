@@ -11,15 +11,15 @@ function Modal({ modal, closeModal }) {
     if (!modal) { return null; }
     let component;
     switch (modal.modal) {
-        case ('create-bill'):
+        case 'create-bill':
             component = <CreateBillContainer
                 authorId={modal.authorId}
             />
             break;
-        case ('edit-bill'):
+        case 'edit-bill':
             component = <EditBillContainer bill={modal.bill} />
             break;
-        case ('settle'):
+        case 'settle':
             component = <SettleContainer />
             break;
         default:
@@ -28,7 +28,7 @@ function Modal({ modal, closeModal }) {
 
     return (
         <div className="modal-background" onClick={closeModal}>
-            <div className="modal-part" onClick={}>
+            <div className="modal-child" onClick={e =>e.stopPropagation()}>
                 {component}
             </div>
         </div>

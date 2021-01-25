@@ -5,11 +5,11 @@ import IndexContainer from './index/index_container';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import DashboardContainer from './dashboard/dashboard_container'
-// import Modal from './modal/modal';
+import Modal from './modal/modal';
 
 export default () => (
     <div>
-        {/* <Modal /> */}
+        <Modal />
         <Route exact path="/" component={IndexContainer} />
         <ProtectedRoute path="/dashboard" component={DashboardContainer} />
         <AuthRoute path="/signup" component={SignupContainer} />

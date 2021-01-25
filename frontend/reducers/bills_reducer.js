@@ -6,15 +6,15 @@ import {
 
 export default (state = {}, action) => {
     Object.freeze(state);
+    let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_ALL_BILLS:
             return action.bills;
 
         case RECEIVE_BILL:
-            return Object.assign({}, state, { [action.bill.id]: action.bill })
-
+            newState[action.bill.id] = action.bill;
+            return newState;
         case REMOVE_BILL:
-            let newState = Object.assign({}, state);
             delete newState[action.billId];
             return newState;
 
