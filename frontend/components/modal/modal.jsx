@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
-import CreateBillContainer from '../Dashboard/bill/create_bill_container';
+import CreateBillContainer from '../dashboard/bill/create_bill_container';
 // import AddFriendContainer from '../Dashboard/LeftDashboard/add_friend_container';
 // import InviteFriend from '../Dashboard/bill/invite_friend';
 // import EditBillContainer from '../Dashboard/bill/edit_bill_container';
