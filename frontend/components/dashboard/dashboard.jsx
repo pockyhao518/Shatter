@@ -17,7 +17,7 @@ export default class Dashboard extends React.Component {
         this.setState({ show: newState })
     }
     componentDidMount() {
-        this.props.fetchAllBills(currentUser.id);
+        this.props.fetchAllBills(this.props.currentUser.id);
     }
 
     handleDelete(id) {
