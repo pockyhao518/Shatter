@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-
+Bill.destroy_all
 
 guest = User.create!(
     username: 'DemoUser',
@@ -15,11 +15,17 @@ guest = User.create!(
     password: 'password',
 )
 
+u3 = User.create!(
+    username: 'user3',
+    email: 'user3@email.com',
+    password: 'password',
+)
+
 b1 = Bill.create!(
     amount: 30,
     equal: 'true',
     description: 'lunch',
-    author_id: 4,
+    author_id: guest.id,
     date: '2021-01-25' 
 )
 
@@ -27,7 +33,7 @@ b2 = Bill.create!(
     amount: 20,
     equal: 'true',
     description: 'dinner',
-    author_id: 4,
+    author_id: guest.id,
     date: '2021-01-25' 
 )
 
@@ -35,6 +41,6 @@ b3 = Bill.create!(
     amount: 60,
     equal: 'true',
     description: 'dinner',
-    author_id: 3,
+    author_id: u3.id,
     date: '2021-01-25' 
 )
