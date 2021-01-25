@@ -15,7 +15,7 @@
     font-family: 'Roboto';
     color: white;
     background-color: #f86b0ee7;
-    padding: 6px 9px;
+    padding: 8px 9px;
     border-radius: 5px;
     box-shadow: 0px 2px #757474;
     margin-left: 20px;
@@ -83,7 +83,13 @@ form input{
     margin: 5px 1px 3px 0px;
     width: 220px;
 }
-
+form textarea{
+    border: 1px solid #747171;
+    border-radius: 3px;
+    padding: 3px 0px 10px 10px;
+    margin: 5px 1px 3px 0px;
+    width: 220px;
+}
 form button{
     background-color: #f86b0ee7;
     color: white;

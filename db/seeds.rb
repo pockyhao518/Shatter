@@ -12,3 +12,27 @@ guest = User.create!(
     email: 'demo@email.com',
     password: 'password',
 )
+
+b1 = Bill.create!(
+    amount: 30,
+    equal: 'true',
+    description: 'lunch',
+    author_id: 4,
+    date: '2021-01-25' 
+)
+
+b2 = Bill.create!(
+    amount: 20,
+    equal: 'true',
+    description: 'dinner',
+    author_id: 4,
+    date: '2021-01-25' 
+)
+
+b3 = Bill.create!(
+    amount: 60,
+    equal: 'true',
+    description: 'dinner',
+    author_id: 3,
+    date: '2021-01-25' 
+)

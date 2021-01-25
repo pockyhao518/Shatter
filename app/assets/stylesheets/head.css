@@ -98,10 +98,10 @@ a.signup {
     position: relative;
     display: flex;
     font-family: 'Roboto';
-    background-color: white;
+    background-color: rgb(187, 239, 248);
     color: black;
-    padding: 0px 0px;
-    border-radius: 0px;
+    padding: 2px 15px;
+    border-radius: 8px;
     box-shadow: 0px 0px #757474;
     margin-left: 0px;
 }

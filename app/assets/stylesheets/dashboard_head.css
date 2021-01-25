@@ -1,0 +1,42 @@
+header{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 25px;
+    color: #3b3737;
+    padding-top: 15px;
+    margin-left: 10px;
+}
+
+button.add-bill{
+    background-color: #f85b22;
+    text-shadow: 0 -1px 0 #a5330a;
+    border-style: outset;
+    color: white;
+    font-family: Roboto;
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.center-dashboard {
+    flex-direction: row;
+    border-bottom: 1px solid rgb(199, 198, 198);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button.settle{
+    background-color: #24d1ac;
+    text-shadow: 0 -1px 0 #287a63;
+    border-style: outset;
+    color: white;
+    font-family: Roboto;
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
