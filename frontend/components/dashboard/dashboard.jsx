@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CenterDashboard from './centerDashboard/center_dashboard';
-import BillIndexItem from './bill_index_item'
+import BillIndexItem from './bill_index_item';
+import FriendIndexItem from './friend_index_item';
 
 export default class Dashboard extends React.Component {
     constructor(props) {
@@ -10,7 +11,8 @@ export default class Dashboard extends React.Component {
             show: false
         }
         this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
-        this.handleDelete = this.handleDelete.bind(this)
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
     whenFocusOrBlur(e) {
         const newState = !this.state.show
@@ -18,11 +20,21 @@ export default class Dashboard extends React.Component {
     }
     componentDidMount() {
         this.props.fetchAllBills(this.props.currentUser.id);
+        this.props.fetchAllFriends();
     }
 
     handleDelete(id) {
         return e => {
             this.props.deleteBill(id);
+        }
+    }
+
+    handleClick(modal) {
+        let that = this;
+        return e => {
+            e.preventDefault();
+            const authorId = that.props.currentUser.id ? that.props.currentUser.id : null
+            this.props.openModal({ modal: modal, authorId: authorId })
         }
     }
     render() {
@@ -55,7 +67,13 @@ export default class Dashboard extends React.Component {
                 </div>
                 <div className='dash-main'>
                     <div className='left-side-bar'>
-                        Dashboard
+                        <div>Dashboard</div>
+                        <br/>
+                        <div>Friends<a onClick={this.handleClick('add-friend')}>+</a></div>
+                        
+                        <br/>
+                        {this.props.friends.map(friend=>
+                            <FriendIndexItem key={friend.id} friend={friend} deleteFriend={this.props.deleteFriend}/>)}
                     </div>
                     <div className='center-col'>
                         
@@ -65,7 +83,7 @@ export default class Dashboard extends React.Component {
                             <li><div>Description</div><div>Amount</div><button type='hidden'></button></li>
                             
                             {this.props.bills.map(bill =>
-                                <BillIndexItem key={bill.id} bill={bill} deleteBill={this.props.deleteBill} />)}
+                                <BillIndexItem key={bill.id} openModal={this.props.openModal} currentUser={this.props.currentUser} bill={bill} deleteBill={this.props.deleteBill} updateBill={this.props.updateBill} />)}
                         </ul>
                            
                     </div>

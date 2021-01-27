@@ -2,10 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import CreateBillContainer from '../dashboard/bill/create_bill_container';
-// import AddFriendContainer from '../Dashboard/LeftDashboard/add_friend_container';
-// import InviteFriend from '../Dashboard/bill/invite_friend';
-// import EditBillContainer from '../Dashboard/bill/edit_bill_container';
-// import SettleContainer from '../Dashboard/centerDashboard/settle_container';
+import AddFriendContainer from '../dashboard/friend/add_friend_container';
+import EditBillContainer from '../dashboard/bill/edit_bill_container';
+// import SettleContainer from '../dashboard/centerDashboard/settle_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) { return null; }
@@ -19,6 +18,9 @@ function Modal({ modal, closeModal }) {
         case 'edit-bill':
             component = <EditBillContainer bill={modal.bill} />
             break;
+        case ('add-friend'):
+            component = <AddFriendContainer />
+            break; 
         case 'settle':
             component = <SettleContainer />
             break;

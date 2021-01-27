@@ -44,13 +44,14 @@ class BillFrom extends React.Component {
                 <label>date
                     <br/>
                     <input type="date"
+                            value={this.state.date}
                             onChange={this.update('date')}
                         />
                 </label>
                 <br/>
                 <br/>
                 <div className='bill-form-sub'>
-                <button >Create</button>
+                        <button >{this.props.formType}</button>
                 </div>
             </form>
             </div>

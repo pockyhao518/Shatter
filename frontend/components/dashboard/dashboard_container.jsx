@@ -2,12 +2,14 @@ import { connect } from 'react-redux';
 import Dashboard from './dashboard';
 import { logout } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { fetchAllBills, deleteBill } from '../../actions/bills_actions';
+import { fetchAllBills, deleteBill, updateBill } from '../../actions/bills_actions';
+import { fetchAllFriends, deleteFriend } from '../../actions/friends_action';
 
 const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        bills: Object.values(state.entities.bills)
+        bills: Object.values(state.entities.bills),
+        friends: Object.values(state.entities.friends),
     }
 }
 
@@ -18,7 +20,11 @@ const mDTP = (dispatch, ownProps) => {
         closeModal: () => dispatch(closeModal()),
         logout: () => dispatch(logout()),
         fetchAllBills: (currentUserId) => dispatch(fetchAllBills(currentUserId)),
-        deleteBill: (id) => dispatch(deleteBill(id))
+        deleteBill: (id) => dispatch(deleteBill(id)),
+        updateBill: (bill) => dispatch(updateBill(bill)),
+        fetchAllFriends: () => dispatch(fetchAllFriends()),
+        deleteFriend: (friendId) => dispatch(deleteFriend(friendId)),
+        addFriend: (friend) => dispatch(addFriend(friend))
     }
 }
 

@@ -15,10 +15,31 @@ guest = User.create!(
     password: 'password',
 )
 
-u3 = User.create!(
-    username: 'user3',
-    email: 'user3@email.com',
+u2 = User.create!(
+    username: 'Li',
+    email: 'li@email.com',
     password: 'password',
+)
+
+u3 = User.create!(
+    username: 'Hao',
+    email: 'hao@email.com',
+    password: 'password',
+)
+
+f1 = Friend.create!(
+    user_id: guest.id,
+    friend_id: u3.id
+)
+
+f2 = Friend.create!(
+    user_id: guest.id,
+    friend_id: u2.id
+)
+
+f3= Friend.create!(
+    user_id: u3.id,
+    friend_id: u2.id
 )
 
 b1 = Bill.create!(

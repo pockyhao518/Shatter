@@ -10,6 +10,7 @@ const mSTP = state => ({
         description: '',
         date: '2020-01-01'
     },
+    formType: 'Create'
 })
 
 const mDTP = dispatch => ({

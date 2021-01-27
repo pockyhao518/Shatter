@@ -13,6 +13,17 @@ class User < ApplicationRecord
         class_name: :Bill,
         dependent: :destroy
 
+    has_many :friendship,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Friend,
+        dependent: :destroy
+
+    has_many :friends,
+        through: :friendship,
+        source: :friend,
+        dependent: :destroy
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil unless user
