@@ -45,3 +45,12 @@ export const logout = () => dispatch => {
     .then(user => (dispatch(logoutCurrentUser())
     ))
 };
+
+export const signupFake = (user, currentUser) => dispatch => {
+    return APIUtil.signup(user)
+    .then(user => {
+        return {}
+    }, err => {
+        return dispatch(receiveSessionErrors(err.responseJSON))
+    })
+}

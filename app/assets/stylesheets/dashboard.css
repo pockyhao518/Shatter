@@ -30,3 +30,32 @@
 .center-col li div{
     width: 80px;
 }
+
+.hide-friends-list {
+  display: none;
+  margin-top: 20 px;
+}
+
+.friends-list {
+  position: absolute;
+  background: white;
+  box-shadow: 0 2px 5px #888;
+  left: 0;
+  right: 0;
+  top: 30px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.friends-list li {
+  padding: 5px 20px;
+}
+
+.friends-list li:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.splits-with-form {
+    position: relative;
+}

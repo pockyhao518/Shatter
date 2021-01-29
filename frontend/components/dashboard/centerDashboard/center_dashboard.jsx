@@ -11,8 +11,10 @@ export default class CenterDashboard extends React.Component {
         let that = this;
         return e => {
             e.preventDefault();
-            const authorId = that.props.currentUser.id ? that.props.currentUser.id : null
-            this.props.openModal({ modal: modal, authorId: authorId})
+            const authorId = that.props.currentUser.id ? that.props.currentUser.id : null;
+            const friends = that.props.friends;
+            const splits = that.props.splits;
+            this.props.openModal({ modal: modal, authorId: authorId, friends:friends, splits:splits})
         }
     }
 
@@ -24,9 +26,9 @@ export default class CenterDashboard extends React.Component {
                     <button className="add-bill"
                         onClick={this.handleClick('create-bill')}
                     >Add an Bill</button>
-                    <button className="settle"
+                    {/* <button className="settle"
                         onClick={this.handleClick('settle')}
-                    >Settle</button>
+                    >Settle</button> */}
                 </div>
             </div>
         )

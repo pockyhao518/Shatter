@@ -13,18 +13,21 @@ guest = User.create!(
     username: 'DemoUser',
     email: 'demo@email.com',
     password: 'password',
+    fake: 'false',
 )
 
 u2 = User.create!(
     username: 'Li',
     email: 'li@email.com',
     password: 'password',
+    fake: 'false'
 )
 
 u3 = User.create!(
     username: 'Hao',
     email: 'hao@email.com',
     password: 'password',
+    fake: 'false'
 )
 
 f1 = Friend.create!(
@@ -64,4 +67,16 @@ b3 = Bill.create!(
     description: 'dinner',
     author_id: u3.id,
     date: '2021-01-25' 
+)
+
+s1 = Split.create!(
+    payer_id: guest.id,
+    bill_id: b1.id,
+    amount: b1.amount/2.00
+)
+
+s2 = Split.create!(
+    payer_id: u3.id,
+    bill_id: b1.id,
+    amount: b1.amount/2.00
 )

@@ -15,8 +15,16 @@ class FriendForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state)
-        this.props.closeModal();
+        // this.props.action(this.state)
+        // this.props.closeModal();
+        this.props.signupFake(this.state)
+        .then(
+            ()=>{this.props.action(this.state)}
+        )
+            
+                
+                this.props.closeModal();
+           
     }
 
     render() {

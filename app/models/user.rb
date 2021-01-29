@@ -24,6 +24,12 @@ class User < ApplicationRecord
         source: :friend,
         dependent: :destroy
 
+    has_many :split_bills,
+        primary_key: :id,
+        foreign_key: :payer_id,
+        class_name: :Split,
+        dependent: :destroy
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil unless user

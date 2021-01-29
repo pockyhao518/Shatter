@@ -5,4 +5,9 @@ class Bill < ApplicationRecord
         foreign_key: :author_id,
         class_name: :User
 
+    has_many :split_payer,
+        primary_key: :id,
+        foreign_key: :bill_id,
+        class_name: :Split,
+        dependent: :destroy
 end

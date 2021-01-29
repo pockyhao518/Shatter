@@ -13,10 +13,13 @@ function Modal({ modal, closeModal }) {
         case 'create-bill':
             component = <CreateBillContainer
                 authorId={modal.authorId}
+                friends={modal.friends}
+                splits={modal.splits}
             />
             break;
         case 'edit-bill':
-            component = <EditBillContainer bill={modal.bill} />
+            component = <EditBillContainer bill={modal.bill} friends={modal.friends}
+                splits={modal.splits} />
             break;
         case ('add-friend'):
             component = <AddFriendContainer />

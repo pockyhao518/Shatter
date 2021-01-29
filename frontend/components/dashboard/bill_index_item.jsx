@@ -12,15 +12,23 @@ export default class BillIndexItem extends React.Component{
         return e => {
             e.preventDefault();
             const bill = that.props.bill? that.props.bill : null
-            this.props.openModal({ modal: modal, bill: bill })
+            const splits = that.props.splits
+            const friends = that.props.friends
+            this.props.openModal({ modal: modal, bill: bill, splits:splits, friends:friends })
         }
     }
     
     render(){
+        let splitA = this.props.bill.amount;
+        this.props.splits.forEach(e => {
+            if (e.bill_id === this.props.bill.id){
+                splitA = e.amount;
+            }
+        })
         return (
         <li>
                 <div><button onClick={this.handleClick('edit-bill')}>{this.props.bill.description}</button></div>
-            <div>${this.props.bill.amount}</div>
+            <div>${splitA}</div>
             
             <button onClick={() => this.props.deleteBill(this.props.bill.id)}>X</button>
         </li>

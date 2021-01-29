@@ -8,14 +8,14 @@ const mSTP = (state, ownProps) => {
     // debugger
     const bill = ownProps.bill
     return {
-        bill: {
-            id: bill.id,
-            amount: bill.amount,
-            equal: bill.equal,
-            description: bill.description,
-            date: bill.date 
-        },
+        id: bill.id,
+        amount: bill.amount,
+        equal: bill.equal,
+        description: bill.description,
+        date: bill.date,
         formType: 'Edit',
+        friendsList: [],
+        split: 0,
         currentUser: Object.values(state.entities.users)[0]
     }
 }

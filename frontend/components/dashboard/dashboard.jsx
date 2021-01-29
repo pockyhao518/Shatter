@@ -21,6 +21,7 @@ export default class Dashboard extends React.Component {
     componentDidMount() {
         this.props.fetchAllBills(this.props.currentUser.id);
         this.props.fetchAllFriends();
+        this.props.fetchAllSplits();
     }
 
     handleDelete(id) {
@@ -78,12 +79,12 @@ export default class Dashboard extends React.Component {
                     <div className='center-col'>
                         
                         
-                        <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} header={'Dashboard'}/>
+                        <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} splits={this.props.splits} friends={this.props.friends}  header={'Dashboard'}/>
                         <ul>
                             <li><div>Description</div><div>Amount</div><button type='hidden'></button></li>
                             
                             {this.props.bills.map(bill =>
-                                <BillIndexItem key={bill.id} openModal={this.props.openModal} currentUser={this.props.currentUser} bill={bill} deleteBill={this.props.deleteBill} updateBill={this.props.updateBill} />)}
+                                <BillIndexItem key={bill.id} openModal={this.props.openModal} splits={this.props.splits} friends={this.props.friends} currentUser={this.props.currentUser} bill={bill} deleteBill={this.props.deleteBill} updateBill={this.props.updateBill} />)}
                         </ul>
                            
                     </div>

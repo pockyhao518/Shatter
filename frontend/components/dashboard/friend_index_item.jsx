@@ -2,7 +2,6 @@ import React from 'react';
 
 export default class FriendIndexItem extends React.Component {
     constructor(props) {
-        // debugger
         super(props)
     }
 

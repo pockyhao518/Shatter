@@ -3,7 +3,6 @@ import * as FriendAPIUtil from '../util/friends_api_util';
 export const RECEIVE_FRIENDS = 'RECEIVE_FRIENDS';
 export const RECEIVE_FRIEND_ERROR = 'RECEIVE_FRIEND_ERROR';
 
-import { receiveCurrentUser } from './session_actions';
 
 const receiveAllFriends = friends => {
     return {
