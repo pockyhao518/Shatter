@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
     const splits = ownProps.splits;
 
     let arr = [];
-    let spm = 0;
+    let spm = bill.amount;
     let remove = [];
 
     splits.forEach(sp=>{
