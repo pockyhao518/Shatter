@@ -1,24 +1,10 @@
 # README
+Welcome to the Shatter wiki!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you are worry about split bill with your friends, Shatter will be your best support!
 
-Things you may want to cover:
+Convenience, Fast and stress free!
 
-* Ruby version
+Let's share your experience with friends.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://shatter.herokuapp.com/
