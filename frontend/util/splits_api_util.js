@@ -5,11 +5,11 @@ export const fetchAllSplits = () => {
     })
 }
 
-export const createSplit = friend => {
+export const createSplit = split => {
     return $.ajax({
         method: 'POST',
         url: '/api/splits',
-        data: { friend }
+        data: { split }
     })
 }
 
