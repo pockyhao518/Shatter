@@ -22,3 +22,12 @@ https://shatter.herokuapp.com/
 * Auth features (signup, login, logout), only user can use the app
 * Adding friend for user to split their bills
 * Adding bill and select friends to share the bill
+
+## Adding friends
+![alt text](https://github.com/pockyhao518/Shatter/blob/main/app/assets/images/add_friend.gif)
+
+## Adding bills
+![alt text](https://github.com/pockyhao518/Shatter/blob/main/app/assets/images/add_bill.gif)
+
+## Editing bill
+![alt text](https://github.com/pockyhao518/Shatter/blob/main/app/assets/images/edit_bill.gif)
