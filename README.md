@@ -8,3 +8,5 @@ Convenience, Fast and stress free!
 Let's share your experience with friends.
 
 https://shatter.herokuapp.com/
+
+#Technologies
