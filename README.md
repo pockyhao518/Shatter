@@ -22,4 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-https://media2.giphy.com/media/S7If3npMHPE3mKMfml/giphy.gif
+![]()
