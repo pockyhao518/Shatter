@@ -44,6 +44,7 @@ class BillFrom extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let that = {
+            id:this.state.id,
             amount: this.state.amount,
             equal: this.state.equal,
             description: this.state.description,
@@ -53,6 +54,11 @@ class BillFrom extends React.Component {
         let list = this.state.friendsList;
         let author = this.state.authorId;
         let splitMoney = this.state.split;
+        if(this.state.formType === 'Edit'){
+            this.state.splitId.forEach(idx=>{
+                this.props.deleteSplit(idx)
+            })
+        }
         if (list.length !== 0){
             this.props.action(that).then(
                 (action) => {
