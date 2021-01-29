@@ -1,24 +1,24 @@
 # README
+Welcome to the Shatter wiki!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you are worry about split bill with your friends, Shatter will be your best support!
 
-Things you may want to cover:
+Convenience, Fast and stress free!
 
-* Ruby version
+Let's share your experience with friends.
 
-* System dependencies
+https://shatter.herokuapp.com/
 
-* Configuration
+# Technologies
+## Backend
+* PostgreSQL
+* Ruby on Rails
 
-* Database creation
+## Frontend
+* React
+* Redux
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Features
+* Auth features (signup, login, logout), only user can use the app
+* Adding friend for user to split their bills
+* Adding bill and select friends to share the bill
