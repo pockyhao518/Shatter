@@ -5,6 +5,7 @@ import IndexContainer from './index/index_container';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import DashboardContainer from './dashboard/dashboard_container'
+import HistoryContainer from './dashboard/history/history_container'
 import Modal from './modal/modal';
 
 export default () => (
@@ -12,6 +13,7 @@ export default () => (
         <Modal />
         <Route exact path="/" component={IndexContainer} />
         <ProtectedRoute path="/dashboard" component={DashboardContainer} />
+        <ProtectedRoute path="/history" component={HistoryContainer} />
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={LoginContainer} />
     </div>

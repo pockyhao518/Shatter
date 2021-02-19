@@ -1,16 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CenterDashboard from './centerDashboard/center_dashboard';
-import BillIndexItem from './bill_index_item';
-import FriendIndexItem from './friend_index_item';
-import SplitIndexItem from './split_index_item';
+import CenterDashboard from '../centerDashboard/center_dashboard';
+import BillIndexItem from '../bill_index_item';
+import FriendIndexItem from '../friend_index_item';
 
-export default class Dashboard extends React.Component {
+export default class History extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            show: false,
-            obj:{}
+            show: false
         }
         this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
@@ -52,60 +50,45 @@ export default class Dashboard extends React.Component {
                 <Link className="signup" to="/signup">Sign up</Link>
             </div>
             );
-        
-        if (this.props.splits.length > 0) {
-            
-            let that = this;
-            this.props.splits.forEach(el => {
-                
-                if (el.payer_id !== that.props.currentUser.id) {
-                    
-                    if (that.state.obj[el.payer_id]){
-                        that.state.obj[el.payer_id] += el.amount;
-                    }else{
-                        that.state.obj[el.payer_id] = el.amount
-                    }
-                    
-                }
-                
-            })
-        }
-        
         return (
-            
+
             <div className="dashboard">
                 <div className="session-form">
-                <div className="login-signup">
-                    <div>
-                        <img src={window.icon} alt="icon" />
-                        <Link to='/'>
-                            <h1>Shatter</h1>
-                        </Link>
+                    <div className="login-signup">
+                        <div>
+                            <img src={window.icon} alt="icon" />
+                            <Link to='/'>
+                                <h1>Shatter</h1>
+                            </Link>
+                        </div>
+                        <div>
+                            {logStatus}
+                        </div>
                     </div>
-                    <div>
-                        {logStatus}
-                    </div>
-                </div>
                 </div>
                 <div className='dash-main'>
                     <div className='left-side-bar'>
                         <Link to='/dashboard'>Dashboard</Link>
-                        <br/>
-                        <Link to='/history'>History</Link>
-                        <br/>
+                        <br />
+                        <Link to='/user/history'>History</Link>
+                        <br />
                         <div>Friends<a onClick={this.handleClick('add-friend')}>+</a></div>
-                        
-                        <br/>
-                        {this.props.friends.map(friend=>
-                            <FriendIndexItem key={friend.id} friend={friend} deleteFriend={this.props.deleteFriend}/>)}
+
+                        <br />
+                        {this.props.friends.map(friend =>
+                            <FriendIndexItem key={friend.id} friend={friend} deleteFriend={this.props.deleteFriend} />)}
                     </div>
                     <div className='center-col'>
-                        
-                        
-                        <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} splits={this.props.splits} friends={this.props.friends}  header={'Dashboard'}/>
-                        {Object.keys(this.state.obj).map(split =>
-                            <SplitIndexItem  id = {split} amount={this.state.obj[split]} />
-                        )}
+
+
+                        <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} splits={this.props.splits} friends={this.props.friends} header={'Dashboard'} />
+                        <ul>
+                            <li><div>Description</div><div>Amount</div><button type='hidden'></button></li>
+
+                            {this.props.bills.map(bill =>
+                                <BillIndexItem key={bill.id} openModal={this.props.openModal} splits={this.props.splits} friends={this.props.friends} currentUser={this.props.currentUser} bill={bill} deleteBill={this.props.deleteBill} updateBill={this.props.updateBill} />)}
+                        </ul>
+
                     </div>
                     <div className='right-side-bar'>
                         About me

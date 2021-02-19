@@ -5,6 +5,7 @@ import Splits from './split/split';
 class BillFrom extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = this.props
         this.handleUpdateSplits = this.handleUpdateSplits.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);

@@ -27,7 +27,7 @@ export default class BillIndexItem extends React.Component{
         })
         return (
         <li>
-                <div><button onClick={this.handleClick('edit-bill')}>{this.props.bill.description}</button></div>
+            <div><button onClick={this.handleClick('edit-bill')}>{this.props.bill.description}</button></div>
             <div>${splitA}</div>
             
             <button onClick={() => this.props.deleteBill(this.props.bill.id)}>X</button>
