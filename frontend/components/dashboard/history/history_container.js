@@ -13,7 +13,7 @@ const mstp = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         bills: Object.values(state.entities.bills),
         friends: Object.values(state.entities.friends),
-        splits: Object.values(state.entities.splits)
+        splits: Object.values(state.entities.splits),
     }
 }
 

@@ -10,7 +10,6 @@ export default class Dashboard extends React.Component {
         super(props)
         this.state = {
             show: false,
-            obj:{}
         }
         this.whenFocusOrBlur = this.whenFocusOrBlur.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
@@ -53,24 +52,6 @@ export default class Dashboard extends React.Component {
             </div>
             );
         
-        if (this.props.splits.length > 0) {
-            
-            let that = this;
-            this.props.splits.forEach(el => {
-                
-                if (el.payer_id !== that.props.currentUser.id) {
-                    
-                    if (that.state.obj[el.payer_id]){
-                        that.state.obj[el.payer_id] += el.amount;
-                    }else{
-                        that.state.obj[el.payer_id] = el.amount
-                    }
-                    
-                }
-                
-            })
-        }
-        
         return (
             
             <div className="dashboard">
@@ -103,9 +84,9 @@ export default class Dashboard extends React.Component {
                         
                         
                         <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} splits={this.props.splits} friends={this.props.friends}  header={'Dashboard'}/>
-                        {Object.keys(this.state.obj).map(split =>
-                            <SplitIndexItem  id = {split} amount={this.state.obj[split]} />
-                        )}
+                        
+                        {this.props.friends.map(friend =>
+                            <SplitIndexItem key={friend.id} friend={friend} splits={this.props.splits} />)}
                     </div>
                     <div className='right-side-bar'>
                         About me
