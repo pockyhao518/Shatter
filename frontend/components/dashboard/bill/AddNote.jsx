@@ -6,7 +6,14 @@ class AddNote extends React.Component {
     constructor(props) {
         super(props);
         // debugger
-        this.state = this.props
+        this.state = {
+            id: this.props.id,
+            amount: this.props.amount,
+            equal: this.props.equal,
+            description: this.props.description,
+            date: this.props.date,
+            note: this.props.note
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -20,17 +27,10 @@ class AddNote extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let that = {
-            id: this.state.id,
-            amount: this.state.amount,
-            equal: this.state.equal,
-            description: this.state.description,
-            date: this.state.date,
-            note:this.state.note
-        }
+        
         debugger
 
-        this.props.action(that)
+        this.props.action(this.state)
         
 
 
@@ -41,10 +41,10 @@ class AddNote extends React.Component {
 
         return (
             <div>
-                <h1>Add Note</h1>
+                <h1>Add Comment</h1>
                 <form onSubmit={this.handleSubmit}>
 
-                    <label>Note
+                    <label>Comment
                         <br/>
                     <textarea value={this.state.note}
                             onChange={this.update('note')}
@@ -54,7 +54,7 @@ class AddNote extends React.Component {
                     <br />
                     <br />
                     <div className='add-note'>
-                        <button >Add Note</button>
+                        <button >Add Comment</button>
                     </div>
                 </form>
             </div>

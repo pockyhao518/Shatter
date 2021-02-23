@@ -9,6 +9,10 @@
     display: block;
 }
 
+#more p {
+    border: inset;
+    border-radius: 5px;
+}
 
 .center-col li{
     border-radius: 10px;

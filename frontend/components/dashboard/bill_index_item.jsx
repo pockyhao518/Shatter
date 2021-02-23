@@ -32,7 +32,7 @@ export default class BillIndexItem extends React.Component{
                 splitA = e.amount;
             }
         })
-        let note = 'Nothing to note';
+        let note = 'Nothing to comment';
         if (this.props.bill.note){
             note = this.props.bill.note
         }
@@ -48,11 +48,11 @@ export default class BillIndexItem extends React.Component{
                 <div className='inactive-main' id={this.props.bill.id + 'more'}>
                     <div id='more'>
                         <br />
-                        <div>Note:</div>
+                            <div>Comment:</div>
                         <p>{note}</p>
                         <br/>
                         <br />
-                        <button onClick={this.handleClick('add-note')}>Add note</button>
+                            <button onClick={this.handleClick('add-note')}>Add Comment</button>
                         <button onClick={this.handleClick('edit-bill')}>Edit</button>
                         <button onClick={() => this.props.deleteBill(this.props.bill.id)}>Delete</button>
 
