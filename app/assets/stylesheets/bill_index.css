@@ -1,0 +1,44 @@
+.inactive-main {
+    transition: .3s;
+    display: none;
+    opacity: 0;
+    z-index: -2;
+}
+
+#more {
+    display: block;
+}
+
+
+.center-col li{
+    border-radius: 10px;
+    padding: 10px;
+    letter-spacing: 1.5px;
+    transition: .3s;    
+    background-color:rgb(216, 233, 233);    
+    padding: 20px 10px;
+    align-items: center;
+    margin: 10px;
+    list-style-type: none;
+}
+
+.history li:hover{
+    cursor: pointer;
+}
+
+.history textarea{
+    border: black;
+    border-style: inset;
+}
+
+.history button{
+    background-color: #f86b0ee7;
+    color: white;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #f8741cee;
+    font-size: 20px;
+    border-style: outset;
+    margin:5px;
+}

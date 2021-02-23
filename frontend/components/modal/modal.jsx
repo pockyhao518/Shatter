@@ -4,7 +4,7 @@ import { closeModal } from '../../actions/modal_actions';
 import CreateBillContainer from '../dashboard/bill/create_bill_container';
 import AddFriendContainer from '../dashboard/friend/add_friend_container';
 import EditBillContainer from '../dashboard/bill/edit_bill_container';
-// import SettleContainer from '../dashboard/centerDashboard/settle_container';
+import AddNoteContainer from '../dashboard/bill/add_note_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) { return null; }
@@ -24,8 +24,9 @@ function Modal({ modal, closeModal }) {
         case ('add-friend'):
             component = <AddFriendContainer />
             break; 
-        case 'settle':
-            component = <SettleContainer />
+        case 'add-note':
+            component = <AddNoteContainer bill={modal.bill} friends={modal.friends}
+                splits={modal.splits} />
             break;
         default:
             return null;

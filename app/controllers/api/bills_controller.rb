@@ -42,6 +42,6 @@ class Api::BillsController < ApplicationController
 
     private
     def bill_params
-        params.require(:bill).permit(:author_id, :amount, :description, :date, :equal )
+        params.require(:bill).permit(:author_id, :amount, :description, :date, :equal , :note)
     end
 end

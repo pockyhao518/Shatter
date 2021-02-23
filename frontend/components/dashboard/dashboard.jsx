@@ -89,7 +89,11 @@ export default class Dashboard extends React.Component {
                             <SplitIndexItem key={friend.id} friend={friend} splits={this.props.splits} />)}
                     </div>
                     <div className='right-side-bar'>
-                        About me
+                        <p className="account-foot">About me</p>
+                        <ul className='account-link'>
+                            <li><a href="https://github.com/pockyhao518">Github</a></li>
+                            <li><a href="https://www.linkedin.com/in/zihao-li-6281b913b/">LinkedIn</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

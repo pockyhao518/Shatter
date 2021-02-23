@@ -5,7 +5,7 @@ import Splits from './split/split';
 class BillFrom extends React.Component {
     constructor(props) {
         super(props);
-        debugger
+        // debugger
         this.state = this.props
         this.handleUpdateSplits = this.handleUpdateSplits.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -90,7 +90,7 @@ class BillFrom extends React.Component {
         
         return (
             <div>
-            <h1>NEW BILL</h1>
+            <h1>BILL Info</h1>
             <form onSubmit={this.handleSubmit}>
 
                     <Splits authorId={this.props.authorId} friends={this.props.friends} friendsList={this.state.friendsList} handleUpdateSplits={this.handleUpdateSplits}/>

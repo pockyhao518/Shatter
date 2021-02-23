@@ -68,3 +68,9 @@
     text-shadow: 0 -1px 0 #318a71;
     width: 60px;
  }
+
+ .add-note button{
+   background-color: #1cc29f;
+    color: white;
+    text-shadow: 0 -1px 0 #318a71;
+ }

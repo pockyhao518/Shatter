@@ -70,7 +70,7 @@ export default class History extends React.Component {
                     <div className='left-side-bar'>
                         <Link to='/dashboard'>Dashboard</Link>
                         <br />
-                        <Link to='/user/history'>History</Link>
+                        <Link to='/history'>History</Link>
                         <br />
                         <div>Friends<a onClick={this.handleClick('add-friend')}>+</a></div>
 
@@ -82,8 +82,7 @@ export default class History extends React.Component {
 
 
                         <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} splits={this.props.splits} friends={this.props.friends} header={'Dashboard'} />
-                        <ul>
-                            <li><div>Description</div><div>Amount</div><button type='hidden'></button></li>
+                        <ul className='history'>
 
                             {this.props.bills.map(bill =>
                                 <BillIndexItem key={bill.id} openModal={this.props.openModal} splits={this.props.splits} friends={this.props.friends} currentUser={this.props.currentUser} bill={bill} deleteBill={this.props.deleteBill} updateBill={this.props.updateBill} />)}
@@ -91,7 +90,11 @@ export default class History extends React.Component {
 
                     </div>
                     <div className='right-side-bar'>
-                        About me
+                        <p className="account-foot">About me</p>
+                        <ul className='account-link'>
+                            <li><a href="https://github.com/pockyhao518">Github</a></li>
+                            <li><a href="https://www.linkedin.com/in/zihao-li-6281b913b/">LinkedIn</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

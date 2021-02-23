@@ -1,1 +1,1 @@
-json.extract! bill, :id, :author_id, :amount, :description, :date, :equal, :created_at
+json.extract! bill, :id, :author_id, :amount, :description, :date, :equal,:note, :created_at
