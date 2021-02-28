@@ -81,7 +81,7 @@ export default class History extends React.Component {
                     <div className='center-col'>
 
 
-                        <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} splits={this.props.splits} friends={this.props.friends} header={'Dashboard'} />
+                        <CenterDashboard openModal={this.props.openModal} currentUser={this.props.currentUser} splits={this.props.splits} friends={this.props.friends} header={'History'} />
                         <ul className='history'>
 
                             {this.props.bills.map(bill =>

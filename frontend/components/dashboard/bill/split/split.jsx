@@ -73,16 +73,15 @@ export default class Splits extends React.Component {
             { id: friendId, username }
         ); 
         this.handleUpdateSplits(newSplits);
+        this.show = false;
+        this.state.finput = ''
     }
 
     removeSplit(idx) {
-        debugger
         let newSplits = [];
         this.props.friendsList.forEach(el => newSplits.push({ id: el.id, username: el.username}))
         return e => {
-            
             newSplits = newSplits.slice(0, idx).concat(newSplits.splice(idx+1));
-
             this.handleUpdateSplits(newSplits);
         }
     }
@@ -93,8 +92,9 @@ export default class Splits extends React.Component {
             // debugger
             if (split.id !== this.props.authorId) return (
                 <li key={`split-${idx}`}>
-                    <a className="fa fa-times" aria-hidden="true"
-                        onClick={this.removeSplit(idx)} >x</a>{split.username}
+                    <a className="split-list-form" aria-hidden="true"
+                        onClick={this.removeSplit(idx)} >x</a>
+                        {split.username}
                 </li>
             );
         });
@@ -106,7 +106,7 @@ export default class Splits extends React.Component {
                 <li key={i} onClick={this.addSplit}>{result}</li>
             );
         });
-
+        let string = this.state.finput ? (this.state.finput):('')
         return (
             <div>
 
@@ -118,7 +118,7 @@ export default class Splits extends React.Component {
                 <div className="splits-with-form">
                     <input
                         onChange={this.handleInput}
-                        value={this.state.fInput}
+                        value={string}
                         placeholder='Split with...'
                         className="split-with-input"
                         id="split-with-input-box" />

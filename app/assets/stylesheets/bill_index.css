@@ -46,3 +46,8 @@
     border-style: outset;
     margin:5px;
 }
+
+.split-list-form{
+    color: red;
+    padding: 1px;
+}

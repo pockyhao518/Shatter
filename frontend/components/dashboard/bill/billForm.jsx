@@ -1,20 +1,29 @@
 import React from 'react';
 import Splits from './split/split';
 
+// start
 
 class BillFrom extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
-        this.state = this.props
+        this.state = {
+            amount: this.props.amount,
+            equal: this.props.equal,
+            description: this.props.description,
+            date: this.props.date,
+            formType: this.props.formType,
+            friendsList: this.props.friendsList,
+            split: this.props.split,
+        }
         this.handleUpdateSplits = this.handleUpdateSplits.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleUpdateSplits(list){
-        this.setState({ friendsList: list})
-        // debugger
+        // this.setState({ friendsList: list})
+        this.state.friendsList = list;
         this.updateSplitAmount(this.state.amount, this.state.friendsList);
+        
     }
     
     updateSplitAmount(amount, splits = this.state.friendsList) {
@@ -25,11 +34,10 @@ class BillFrom extends React.Component {
             numberOfSplits = splits.length + 1;
         };
 
-        if (amount > 0) {
+        if (amount >= 0) {
             const splitAmount = (amount / numberOfSplits).toFixed(2);
             this.setState({ split: parseFloat(splitAmount) });
         };
-        debugger
     };
 
     update(field) {
@@ -51,7 +59,6 @@ class BillFrom extends React.Component {
             description: this.state.description,
             date: this.state.date,
         }
-        debugger
         let list = this.state.friendsList;
         let author = this.state.authorId;
         let splitMoney = this.state.split;
@@ -87,7 +94,7 @@ class BillFrom extends React.Component {
     }
 
     render() {
-        
+        let amount = this.state.amount !== 0 ? (this.state.amount) : ('')
         return (
             <div>
             <h1>BILL Info</h1>
@@ -105,8 +112,9 @@ class BillFrom extends React.Component {
                 <br/>
                 <br/>
                     <label>Amount
-                    <input type='number' step="0.01"
-                            value={this.state.amount}
+                    <input type='number' step="1"
+                            placeholder = '0'
+                            value={amount}
                             onChange={this.update('amount')}
                         />
                     </label>

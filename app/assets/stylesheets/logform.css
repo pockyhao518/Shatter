@@ -3,12 +3,15 @@
     height: 30px;
 }
 
+.login-signup > div{
+    margin-top: 5px;
+}
 .session-form .login-signup{
     width: auto;
     background-color: #11bb96;
     padding: 0px 40px;
     height: 40px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .session-form .login-signup a.signup {

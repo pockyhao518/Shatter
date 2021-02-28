@@ -1,6 +1,8 @@
 .left-side-bar li{
     justify-content: space-between;
     display: flex;
+    padding: 3px;
+    font-size: 12px;
 }
 
 .left-side-bar :nth-child(3){
@@ -8,6 +10,6 @@
     display: flex;
 }
 
-.friend-form{
-    
+.left-side-bar button{
+    color:red
 }

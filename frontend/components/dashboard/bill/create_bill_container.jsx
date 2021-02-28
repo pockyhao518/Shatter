@@ -21,13 +21,13 @@ const mSTP = (state, ownProps) => {
     today = yyyy+ '-'+mm + '-' + dd   ;
 
     return {
-    amount: '',
-    equal: true,
-    description: '',
-    date: today,
-    formType: 'Create',
-    friendsList: [],
-    split: 0
+        amount: 0,
+        equal: true,
+        description: '',
+        date: today,
+        formType: 'Create',
+        friendsList: [],
+        split: 0
 }}
 
 const mDTP = dispatch => ({

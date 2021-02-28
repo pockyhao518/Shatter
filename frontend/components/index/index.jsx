@@ -38,7 +38,7 @@ class Index extends React.Component {
         return(
             <div className="index">
                 <div className="login-signup">
-                    <div>
+                    <div id = 'first-icon'>
                         <img src={window.icon} alt="icon" />
                         {path}
                     </div>
