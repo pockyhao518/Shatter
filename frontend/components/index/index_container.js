@@ -7,7 +7,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()).then(this.setState({}))
 });
 
 export default connect(mSTP,mDTP)(Index);

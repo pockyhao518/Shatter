@@ -20,7 +20,7 @@ class Index extends React.Component {
         const logStatus = this.props.currentUser ? (
         <div>
             <div className="dropdown">
-                    <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>{this.props.currentUser.username}▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a>: null}</button>
+                    <button onFocus={this.whenFocusOrBlur} onBlur={this.whenFocusOrBlur}>{this.props.currentUser.username}▼ {this.state.show ? <a className="header-button" onClick={this.props.logout}>Log Out</a>: null} </button>
             </div>    
         </div>): 
         (<div>
@@ -28,15 +28,19 @@ class Index extends React.Component {
             <Link className="signup" to="/signup">Sign up</Link>
         </div>
         );
-
+            const path = this.props.currentUser ? (
+                <Link to='/dashboard'>
+                    <h1>Dashboard</h1>
+                </Link>
+            ) : (<Link to = '/'>
+                        <h1>Shatter</h1>
+                        </Link >);
         return(
             <div className="index">
                 <div className="login-signup">
                     <div>
                         <img src={window.icon} alt="icon" />
-                        <Link to='/'>
-                        <h1>Shatter</h1>
-                        </Link>
+                        {path}
                     </div>
                     <div>
                         {logStatus}

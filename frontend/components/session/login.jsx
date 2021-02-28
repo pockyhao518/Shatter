@@ -30,7 +30,7 @@ class Login extends React.Component {
     handleDemoSubmit(e) {
         e.preventDefault();
         this.props.login({
-            username: 'DemoUser',
+            email: 'demo@email.com',
             password: 'password',});
     }
     
@@ -63,11 +63,11 @@ class Login extends React.Component {
                     
                     <form>
                         <h2>WELCOME TO SHATTER</h2>
-                        <label>Username:
+                        <label>Email:
                             <br/>
                             <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')} /></label>
+                                value={this.state.email}
+                                onChange={this.update('email')} /></label>
                         <br/>
                         <br />
                         <label>Password:

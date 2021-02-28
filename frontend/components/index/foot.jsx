@@ -31,8 +31,8 @@ export default class Footer extends React.Component {
                         <div className="div-foot">
                             <p className="account-foot">Zihao Li</p>
                             <ul className='account-link'>
-                                <li><a href="https://github.com/pockyhao518">Github</a></li>
-                                <li><a href="https://www.linkedin.com/in/zihao-li-6281b913b/">LinkedIn</a></li>
+                                <li><a target="_blank" rel="noreferrer"  href="https://github.com/pockyhao518">Github</a></li>
+                                <li><a target="_blank" rel="noreferrer"  href="https://www.linkedin.com/in/zihao-li-6281b913b/">LinkedIn</a></li>
                             </ul>
                         </div>
                     </div>

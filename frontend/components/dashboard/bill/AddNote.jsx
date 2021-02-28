@@ -38,7 +38,10 @@ class AddNote extends React.Component {
     }
 
     render() {
-
+        let comment = ''
+        if (this.state.note !== null){
+            comment = this.state.note;
+        }
         return (
             <div>
                 <h1>Add Comment</h1>
@@ -46,7 +49,7 @@ class AddNote extends React.Component {
 
                     <label>Comment
                         <br/>
-                    <textarea value={this.state.note}
+                    <textarea value={comment}
                             onChange={this.update('note')}
                         />
                     </label>
