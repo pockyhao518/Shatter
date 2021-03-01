@@ -49,3 +49,8 @@
 .splits-with-form {
     position: relative;
 }
+
+.friend-add a {
+  font-size: 13px;
+  color: rgb(226, 151, 12);
+}

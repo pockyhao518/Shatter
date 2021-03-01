@@ -74,9 +74,9 @@ export default class Dashboard extends React.Component {
                         <br/>
                         <Link to='/history'>History</Link>
                         <br/>
-                        <div>Friends<a onClick={this.handleClick('add-friend')}>+</a></div>
+                        <div className='friend-add'><article>Friends</article><a onClick={this.handleClick('add-friend')}>--add+</a></div>
                         
-                        <br/>
+                        
                         {this.props.friends.map(friend=>
                             <FriendIndexItem key={friend.id} friend={friend} deleteFriend={this.props.deleteFriend}/>)}
                     </div>
